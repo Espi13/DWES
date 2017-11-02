@@ -46,10 +46,6 @@ que se han cambiado deben aparecer resaltados de un color diferente.-->
 
       }
 
-
-
-
-
      ?>
   </body>
 </html>
