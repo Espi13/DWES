@@ -12,8 +12,8 @@ que se han cambiado deben aparecer resaltados de un color diferente.-->
     <?php
 
       if (!isset($_POST['num1'])||!isset($_POST['num2'])){
-        for ($i=0;$i<100;$i++){
-          $numeros[$i]=rand(0,20);
+        for ($i=0;$i<20;$i++){
+          $numeros[$i]=rand(0,5);
         }
         foreach ($numeros as $n ) {
           echo "$n ";
@@ -35,14 +35,15 @@ que se han cambiado deben aparecer resaltados de un color diferente.-->
           echo "$n ";
         }
         echo "</br>";
-        for ($i=0;$i<100;$i++){
+        for ($i=0;$i<20;$i++){
           if ($numeros[$i]==$susir){
-            $numeros[$i]=$susto;
+            echo '<span style="color: red; font-weight: bold;">',$susto,'</span>'." ";
+          }
+          else{
+            echo "$numeros[$i] ";
           }
         }
-        foreach ($numeros as $n ) {
-          echo "$n ";
-        }
+
 
       }
 
