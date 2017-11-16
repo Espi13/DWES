@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script>
+	function Validar(f){
+		//El nombre no puede estar vacio
+		document.getElementById("errorNombre").innerHTML="";
+		document.getElementById("errorEmail").innerHTML="";
+		document.getElementById("errorPass").innerHTML="";
+		document.getElementById("errorrePass").innerHTML="";
+		if (/\S/.test(f.nombre.value)==false){
+			document.getElementById("errorNombre").innerHTML="El nombre no puede estar vacio";
+			f.nombre.focus();
+			return false;
+		}
+
+		if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(f.email.value)==false){
+			document.getElementById("errorEmail").innerHTML="El email es invalido";
+			f.email.focus();
+			return false;
+		}
+		if (/^(?=.*\d)([a-zA-Z0-9]){8,}$/.test(f.pass.value)==false ){
+			document.getElementById("errorPass").innerHTML="La contraseña no es valida";
+			f.pass.focus();
+			return false;
+		}
+		if (f.pass.value!=f.repass.value){
+			document.getElementById("errorrePass").innerHTML="La contraseña no coincide";
+			f.repass.focus();
+			return false;
+		}
+		f.boton.disabled=true;
+		return true;
+	}
+
+
+</script>
+</head>
+
+<body>
+<form action="prueba.php" method="post"	onsubmit="return Validar(this)">
+	Nombre <input type="text" name="nombre" value=""><span id="errorNombre" style="color:red"></span><br/><br/>
+	Direccion de correo <input type="text" name="email" value=""><span id="errorEmail" style="color:red"></span><br/><br/>
+  Contraseña <input type="text" name="pass" vale=""><span id="errorPass" style="color:red"></span><br/><br/>
+	Repetir Contraseña <input type="text" name="repass" vale=""><span id="errorrePass" style="color:red"></span><br/><br/>
+<input type="checkbox" name="condiciones" value="acepto" onclick="return Validar(this)">Acepto las condiciones de uso<br/>
+<input type="submit" name="boton" value="Crear cuenta">
+</form>
+
+
+</body>
+</html>
