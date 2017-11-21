@@ -12,33 +12,34 @@ convenientemente alineados.-->
     <?php
     $numeros=array();
     $prueba=array();
-    for ($i=1;$i<145;$i++){
+    for ($i=1;$i<10;$i++){
     $numeros[]=$i;
     }
     $x=0;
-      for ($i=0;$i<12;$i++){
-        for ($j=0;$j<12;$j++){
+      for ($i=0;$i<3;$i++){
+        for ($j=0;$j<3;$j++){
           $prueba[$i][$j]=$numeros[$x];
           $x++;
         }
       }
       echo "<table>";
-      for ($i=0;$i<12;$i++){
+      for ($i=0;$i<3;$i++){
         echo "<tr>";
-        for ($j=0;$j<12;$j++){
+        for ($j=0;$j<3;$j++){
           echo "<td>".$prueba[$i][$j]."</td>";
         }
           echo "</tr>";
       }
         echo "</table>";
 
-      $row=0;
-      $col=0;
-      $prev;
-      $curr;
-      $m=12;
-      $n=12;
+
       //Fila
+        $row=0;
+        $col=0;
+        $prev;
+        $curr;
+        $m=3;
+        $n=3;
       while ($row<$m && $col < $n){
         if ($row+1==$m || $col+1==$n)
         break;
@@ -76,19 +77,16 @@ convenientemente alineados.-->
         }
         $col++;
       }
+      
       echo "<table>";
-      for ($i=0;$i<12;$i++){
+      for ($i=0;$i<3;$i++){
         echo "<tr>";
-        for ($j=0;$j<12;$j++){
+        for ($j=0;$j<3;$j++){
           echo "<td>".$prueba[$i][$j]."</td>";
         }
           echo "</tr>";
       }
         echo "</table>";
-
-123
-456
-789
 
 
      ?>
